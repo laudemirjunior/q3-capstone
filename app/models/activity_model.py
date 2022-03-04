@@ -25,3 +25,9 @@ class ActivityModel(db.Model):
     timer_init = Column(String)
     favorite = Column(Boolean, default=False)
     user_id = Column(UUID(as_uuid=True), ForeignKey('users.id'))
+
+
+    user = db.relationship(
+        "UserModel",
+        backref="activities"
+    )
