@@ -31,3 +31,8 @@ class ActivityModel(db.Model):
         "UserModel",
         backref="activities"
     )
+
+    category = db.relationship(
+        "CategoryModel",
+        back_populates="activity"
+    )

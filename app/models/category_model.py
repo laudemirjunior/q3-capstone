@@ -16,3 +16,9 @@ class CategoryModel(db.Model):
 
     id = Column(UUID(as_uuid=True), primary_key=True, default=uuid4)
     name = Column(String(64), nullable=False, unique=True)
+
+
+    activity = db.relationship(
+        "ActivityModel",
+        back_populates="category"
+    )
